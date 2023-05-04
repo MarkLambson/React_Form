@@ -119,6 +119,7 @@ const Form = () => {
                                 <p>Pet Age: {pet.age}</p>
                                 <img src={pet.image} alt="pet" height="200px"></img>
                                 <br></br>
+                                {/* this is the button to do dark/light mode */}
                                 <button onClick={lightSwitch} className='btn btn-outline-warning mt-3'>{light ? "Off" : "On"}</button>
                                 <hr />
                             </div>
