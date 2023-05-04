@@ -48,7 +48,7 @@ const Form = () => {
                                 <p>Pet Name: {pet.name}</p>
                                 <p>Pet Type: {pet.type}</p>
                                 <p>Pet Age: {pet.age}</p>
-                                <img src={pet.image} alt="rottweiler" height="200px"></img>
+                                <img src={pet.image} alt="pet" height="200px"></img>
                                 <hr />
                             </div>
                         )
