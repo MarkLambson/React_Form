@@ -1,5 +1,17 @@
 import React, { useState } from 'react'
 
+    const lightmode = {
+        backgroundColor: "white",
+        color: "black",
+        padding: "10px"
+    }
+
+    const darkmode = {
+        backgroundColor: "black",
+        color: "white",
+        padding: "10px"
+    }
+
 const Form = () => {
     const [name, setName] = useState("")
     const [nameError, setNameError] = useState("");
@@ -11,6 +23,9 @@ const Form = () => {
     const [imageError, setImageError] = useState("");
 
     let [listOfPets, setListOfPets] = useState([])
+
+    const [light, setLight] = useState(true)
+    const lightSwitch = () => setLight(!light)
 
     const handleName = (event) => {
         setName(event.target.value);
@@ -97,12 +112,14 @@ const Form = () => {
                 {
                     listOfPets.map((pet, idx) => {
                         return (
-                            <div key={idx}>
+                            <div key={idx} style={light ? lightmode : darkmode}>
                                 {/* <h1>This is the index value {idx}</h1> */}
                                 <p>Pet Name: {pet.name}</p>
                                 <p>Pet Type: {pet.type}</p>
                                 <p>Pet Age: {pet.age}</p>
                                 <img src={pet.image} alt="pet" height="200px"></img>
+                                <br></br>
+                                <button onClick={lightSwitch} className='btn btn-outline-warning mt-3'>{light ? "Off" : "On"}</button>
                                 <hr />
                             </div>
                         )
